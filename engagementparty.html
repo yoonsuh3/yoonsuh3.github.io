@@ -7,38 +7,60 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column; /* Aligns content vertically */
+            flex-direction: column;
             height: 100vh;
             margin: 0;
+            background: #f0f0f0; /* Set a background color */
+            overflow: hidden; /* Hide overflowing elements beyond the viewport */
+        }
+
+        h1 {
+            font-size: 2em;
         }
 
         h3 {
-            color: pink; /* Changes the color of the h3 element to pink */
-            font-size: 1.5em; /* Adjusts the font size to match Date and Location */
-            text-align: center; /* Centers the text */
-            margin-top: 20px; /* Adds space above the h3 element */
+            color: pink;
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 20px;
         }
 
         p {
-            text-align: center; /* Centers the text */
+            text-align: center;
+        }
+
+        /* Sparkle animation */
+        .sparkle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.9); /* White with some transparency */
+            border-radius: 50%;
+            animation: sparkle 1s infinite linear;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+            50% {
+                transform: translateY(-10px) rotate(45deg);
+            }
         }
     </style>
 </head>
 <body>
+    <div class="sparkle"></div>
     <h1>Engagement Party</h1>
 
-    <img src="engagement_photo.jpg" alt="Engagement Photo" width="400">
+    <img src="engagement_photo.jpg" alt="Happy Couple at Engagement Party" width="400">
 
     <div class="header">
-        <h2>&#128150; Date: July 13, 2024</h2> <!-- Heart emoji before Date -->
-        <h2>&#128150; Location: Seoul, Korea</h2> <!-- Heart emoji before Location -->
+        <h2>&#128150; Date: July 13, 2024</h2>
+        <h2>&#128150; Location: Seoul, Korea</h2>
         <p>in 삼청각 SamcheongGak: <a href="http://www.samcheonggak.or.kr/hanok/">http://www.samcheonggak.or.kr/hanok/</a></p>
         <h3>Do you know how we met?</h3>
         <p>Check out our story map <a href="https://storymaps.com/stories/c12488628d88409a8ea8883440014d17">here</a></p>
     </div>
 </body>
 </html>
-
-</body>
-</html>
-
