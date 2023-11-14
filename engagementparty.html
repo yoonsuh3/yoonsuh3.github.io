@@ -19,6 +19,12 @@
             font-family: 'Calibri', sans-serif;
         }
 
+        .letter-frame {
+            border: 10px solid #ff66b2; /* Pink border for the frame */
+            padding: 20px; /* Add padding inside the frame */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
         h1 {
             font-size: 4em; /* Update font size for h1 to 4em */
             font-family: 'Dancing Script', cursive; /* Set the font family for h1 */
@@ -26,32 +32,39 @@
 
         h2 {
             margin-bottom: 10px; /* Add margin-bottom for spacing between h2 and h3 */
-            font-size: 2em; /* Update font size for h2 to 2em */
+            font-size: 1.8em; /* Update font size for h2 to 1.8em */
         }
 
         h3 {
             color: pink;
-            font-size: 2em; /* Update font size for h3 to 2em */
+            font-size: 1.5em; /* Update font size for h3 to 1.5em */
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px; /* Adjusted margin-top for more space */
         }
 
         p {
             text-align: center;
+            font-size: 1.2em; /* Update font size for p to 1.2em */
+        }
+
+        .heart {
+            color: pink;
         }
     </style>
 </head>
 <body>
-    <h1>Engagement Party</h1>
+    <div class="letter-frame">
+        <h1>Engagement Party</h1>
 
-    <img src="engagement_photo.jpg" alt="Happy Couple" width="400">
+        <img src="engagement_photo.jpg" alt="Happy Couple at Engagement Party" width="400">
 
-    <div class="header">
-        <h2>&#128150; Date: July 13, 2024</h2>
-        <h2>&#128150; Location: Seoul, Korea</h2>
-        <p>in 삼청각 SamcheongGak: <a href="http://www.samcheonggak.or.kr/hanok/">http://www.samcheonggak.or.kr/hanok/</a></p>
-        <h3>Do you know how we met?</h3>
-        <p>Check out our story map <a href="https://storymaps.com/stories/c12488628d88409a8ea8883440014d17">here</a></p>
+        <div class="header">
+            <h2><span class="heart">&#128150;</span> Date: July 13, 2024</h2>
+            <h2><span class="heart">&#128150;</span> Location: Seoul, Korea</h2>
+            <p>in 삼청각 SamcheongGak: <a href="http://www.samcheonggak.or.kr/hanok/">http://www.samcheonggak.or.kr/hanok/</a></p>
+            <h3>Do you know how we met?</h3>
+            <p>Check out our story map <a href="https://storymaps.com/stories/c12488628d88409a8ea8883440014d17">here</a></p>
+        </div>
     </div>
 </body>
 </html>
