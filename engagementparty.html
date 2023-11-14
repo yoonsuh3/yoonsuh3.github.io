@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engagement Party</title>
     <style>
         body {
@@ -11,6 +13,7 @@
             height: 100vh;
             margin: 0;
             background: #f0f0f0; /* Set a background color */
+            font-family: 'Calibri', sans-serif;
             overflow: hidden; /* Hide overflowing elements beyond the viewport */
         }
 
@@ -19,8 +22,8 @@
         }
 
         h3 {
-            color: pink;
-            font-size: 1.5em;
+            color: rgb(219, 150, 161);
+            font-size: 1em;
             text-align: center;
             margin-top: 20px;
         }
@@ -29,28 +32,29 @@
             text-align: center;
         }
 
-        /* Sparkle animation */
-        .sparkle {
+        /* Confetti animation */
+        .confetti {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.9); /* White with some transparency */
+            width: 10px;
+            height: 10px;
+            background: rgb(0, 170, 255); /* Red color, you can customize */
             border-radius: 50%;
-            animation: sparkle 1s infinite linear;
+            animation: confetti-fall 1s linear infinite;
         }
 
-        @keyframes sparkle {
-            0%, 100% {
+        @keyframes confetti-fall {
+            0% {
                 transform: translateY(0) rotate(0);
             }
-            50% {
-                transform: translateY(-10px) rotate(45deg);
+            100% {
+                transform: translateY(100vh) rotate(360deg);
             }
         }
     </style>
 </head>
 <body>
-    <div class="sparkle"></div>
+    <div id="confetti-container"></div>
+
     <h1>Engagement Party</h1>
 
     <img src="engagement_photo.jpg" alt="Happy Couple at Engagement Party" width="400">
@@ -62,5 +66,31 @@
         <h3>Do you know how we met?</h3>
         <p>Check out our story map <a href="https://storymaps.com/stories/c12488628d88409a8ea8883440014d17">here</a></p>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const confettiContainer = document.getElementById('confetti-container');
+
+            // Function to create confetti elements
+            function createConfetti() {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+                confettiContainer.appendChild(confetti);
+
+                // Remove confetti element after animation
+                confetti.addEventListener('animationend', function() {
+                    confetti.remove();
+                });
+            }
+
+            // Function to create multiple confetti elements
+            function generateConfetti() {
+                setInterval(createConfetti, 500); // Adjust the interval as needed
+            }
+
+            generateConfetti();
+        });
+    </script>
 </body>
 </html>
