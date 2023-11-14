@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engagement Party</title>
     <style>
+        /* Import Dancing Script font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
         body {
             display: flex;
             justify-content: center;
@@ -15,15 +18,22 @@
             background: #f0f0f0; /* Set a background color */
             font-family: 'Calibri', sans-serif;
             overflow: hidden; /* Hide overflowing elements beyond the viewport */
+            position: relative; /* Set the body to a relative position for absolute positioning of .confetti and emojis */
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 4em; /* Update font size for h1 to 4em */
+            font-family: 'Dancing Script', cursive; /* Set the font family for h1 */
+        }
+
+        h2 {
+            margin-bottom: 10px; /* Add margin-bottom for spacing between h2 and h3 */
+            font-size: 2em; /* Update font size for h2 to 2em */
         }
 
         h3 {
-            color: rgb(219, 150, 161);
-            font-size: 1em;
+            color: pink;
+            font-size: 2em; /* Update font size for h3 to 2em */
             text-align: center;
             margin-top: 20px;
         }
@@ -37,22 +47,57 @@
             position: absolute;
             width: 10px;
             height: 10px;
-            background: rgb(0, 170, 255); /* Red color, you can customize */
             border-radius: 50%;
             animation: confetti-fall 1s linear infinite;
         }
 
         @keyframes confetti-fall {
-            0% {
+            0%, 100% {
                 transform: translateY(0) rotate(0);
             }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
+            50% {
+                transform: translateY(-50vh) rotate(180deg);
             }
         }
+
+        /* Party popper emojis */
+        .party-popper {
+            font-size: 2em;
+        }
+
+        .party-popper-left {
+            position: absolute;
+            left: 10px;
+            top: 10vh;
+        }
+
+        .party-popper-right {
+            position: absolute;
+            right: 10px;
+            top: 10vh;
+        }
+
+        /* Custom classes for multicolored confetti */
+        .confetti.color1 {
+            background: #ff0000; /* Red */
+        }
+
+        .confetti.color2 {
+            background: #00ff00; /* Green */
+        }
+
+        .confetti.color3 {
+            background: #0000ff; /* Blue */
+        }
+
+        /* Add more color classes as needed */
     </style>
 </head>
 <body>
+    <!-- Party popper emojis -->
+    <div class="party-popper party-popper-left">&#127878;</div>
+    <div class="party-popper party-popper-right">&#127878;</div>
+
     <div id="confetti-container"></div>
 
     <h1>Engagement Party</h1>
@@ -74,8 +119,9 @@
             // Function to create confetti elements
             function createConfetti() {
                 const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
+                confetti.classList.add('confetti', `color${Math.floor(Math.random() * 3) + 1}`); // Randomize color class
                 confetti.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+                confetti.style.animationDuration = `${Math.random() * 1 + 0.5}s`; // Randomize animation duration
                 confettiContainer.appendChild(confetti);
 
                 // Remove confetti element after animation
